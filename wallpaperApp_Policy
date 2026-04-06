@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #222;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .date {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Privacy Policy</h1>
+    <p class="date">Last Updated: April 2026</p>
+
+    <p>This Privacy Policy describes how we handle your information when you use our application.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>We may collect non-personal information such as device details, app usage data, and analytics.</p>
+
+    <h2>2. How We Use Information</h2>
+    <p>We use this information to improve app performance, fix issues, and enhance user experience.</p>
+
+    <h2>3. Third-Party Services</h2>
+    <p>We may use services like Firebase, Google Analytics, and AdMob which may collect information.</p>
+
+    <h2>4. Data Security</h2>
+    <p>We take reasonable measures to protect your data, but no method is completely secure.</p>
+
+    <h2>5. Children’s Privacy</h2>
+    <p>We do not knowingly collect personal information from children under 13.</p>
+
+    <h2>6. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Changes will be posted on this page.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>If you have any questions, contact us at: <b>your@email.com</b></p>
+
+</div>
+
+</body>
+</html>
