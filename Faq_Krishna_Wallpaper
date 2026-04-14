@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Wallpaper - FAQ</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #000;
+        color: #fff;
+    }
+
+    header {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .toggle {
+        background: #111;
+        border: 1px solid #222;
+        padding: 6px 12px;
+        border-radius: 20px;
+        color: #FF8C32;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .container {
+        padding: 16px;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .section {
+        margin-bottom: 20px;
+        border-radius: 16px;
+        background: #0d0d0d;
+        border: 1px solid #1f1f1f;
+        overflow: hidden;
+    }
+
+    .faq-item {
+        padding: 16px;
+        border-bottom: 1px solid #1a1a1a;
+        cursor: pointer;
+    }
+
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-question {
+        font-size: 15px;
+        font-weight: 500;
+        color: #FF8C32;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+        color: #bfbfbf;
+        margin-top: 10px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 300px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #666;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="title">FAQ</h1>
+    <div class="toggle" onclick="toggleLang()" id="langBtn">हिंदी</div>
+</header>
+
+<div class="container">
+<div class="section" id="faqContainer"></div>
+</div>
+
+<footer>
+    © 2026 Krishna Wallpaper App
+</footer>
+
+<script>
+
+const data = {
+    en: [
+        ["What is the Krishna Wallpaper app?", "This app offers more than 8 categories of high-quality HD and AMOLED wallpapers of Lord Krishna. It is one of the few apps where you can get the same wallpaper in multiple variations—optimized for home screen, lock screen, or even live wallpaper."],
+        ["Is the app free to use?", "Yes, the app is completely free. Some features may include rewarded ads."],
+        ["How can I set a wallpaper?", "Open a wallpaper → Tap 'Set Wallpaper' → Choose Home Screen, Lock Screen, or Both."],
+        ["Can I download wallpapers?", "Yes. Sometimes you may need to watch a short rewarded ad to download."],
+        ["Why are wallpapers not loading?", "Check your internet connection or restart the app."],
+        ["How can I remove ads?", "This feature may be added in future updates."],
+        ["Can I share wallpapers?", "Yes, use the share option."],
+        ["How often are wallpapers added?", "New wallpapers are added regularly."],
+        ["What permissions are required?", "Storage and internet permissions are required."],
+        ["How to contact support?", "Email: indianappandgamedeveloper@gmail.com"],
+        ["Live wallpaper not working?", "Download the wallpaper and set it manually from your gallery."],
+        ["How to clear cache?", "Go to the More tab → Tap Clear Cache."],
+        ["What is the Bundle tag on some wallpapers?", "A bundle means you get matching wallpapers in the same style—one for the lock screen and one for the home screen."],
+        ["Can I use a lock screen wallpaper on the home screen?", "Yes, very easily. Tap 'Set Wallpaper' and choose Home Screen."],
+        ["Can I use a home screen wallpaper on the lock screen?", "Yes. Tap 'Set Wallpaper' and choose Lock Screen."]
+    ],
+
+    hi: [
+        ["कृष्ण वॉलपेपर ऐप क्या है?", "यह ऐप भगवान कृष्ण के HD और AMOLED वॉलपेपर की 8 से अधिक कैटेगरी प्रदान करता है। इस ऐप में आपको एक ही वॉलपेपर के अलग-अलग वेरिएशन मिलते हैं—होम स्क्रीन, लॉक स्क्रीन और लाइव वॉलपेपर के लिए।"],
+        ["क्या यह ऐप फ्री है?", "हाँ, यह ऐप पूरी तरह फ्री है। कुछ फीचर्स में रिवॉर्डेड विज्ञापन हो सकते हैं।"],
+        ["वॉलपेपर कैसे सेट करें?", "वॉलपेपर खोलें → 'Set Wallpaper' दबाएं → होम, लॉक या दोनों चुनें।"],
+        ["क्या मैं वॉलपेपर डाउनलोड कर सकता हूँ?", "हाँ, कभी-कभी छोटा विज्ञापन देखना पड़ सकता है।"],
+        ["वॉलपेपर लोड क्यों नहीं हो रहे?", "इंटरनेट चेक करें या ऐप रीस्टार्ट करें।"],
+        ["विज्ञापन कैसे हटाएं?", "यह फीचर भविष्य में आ सकता है।"],
+        ["क्या मैं शेयर कर सकता हूँ?", "हाँ, शेयर ऑप्शन का उपयोग करें।"],
+        ["नए वॉलपेपर कब आते हैं?", "नियमित रूप से नए वॉलपेपर जोड़े जाते हैं।"],
+        ["कौन सी परमिशन चाहिए?", "स्टोरेज और इंटरनेट परमिशन चाहिए।"],
+        ["सपोर्ट से कैसे संपर्क करें?", "ईमेल: indianappandgamedeveloper@gmail.com"],
+        ["लाइव वॉलपेपर काम नहीं कर रहा?", "डाउनलोड करके गैलरी से मैन्युअली सेट करें।"],
+        ["कैश कैसे क्लियर करें?", "More टैब → Clear Cache दबाएं।"],
+        ["कुछ वॉलपेपर में Bundle टैग क्या होता है?", "Bundle का मतलब है एक ही स्टाइल के दो वॉलपेपर—एक लॉक स्क्रीन के लिए और एक होम स्क्रीन के लिए।"],
+        ["क्या लॉक स्क्रीन वॉलपेपर को होम स्क्रीन पर लगा सकते हैं?", "हाँ, 'Set Wallpaper' दबाकर होम स्क्रीन चुनें।"],
+        ["क्या होम स्क्रीन वॉलपेपर को लॉक स्क्रीन पर लगा सकते हैं?", "हाँ, 'Set Wallpaper' दबाकर लॉक स्क्रीन चुनें।"]
+    ]
+};
+
+let lang = "en";
+
+function render() {
+    const container = document.getElementById("faqContainer");
+    container.innerHTML = "";
+
+    data[lang].forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "faq-item";
+        div.innerHTML = `
+            <div class="faq-question">${index+1}. ${item[0]}</div>
+            <div class="faq-answer">${item[1]}</div>
+        `;
+
+        div.onclick = () => div.classList.toggle("active");
+        container.appendChild(div);
+    });
+
+    document.getElementById("langBtn").innerText = lang === "en" ? "हिंदी" : "English";
+}
+
+function toggleLang() {
+    lang = lang === "en" ? "hi" : "en";
+    updateURL();
+    render();
+}
+
+function updateURL() {
+    const url = new URL(window.location);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", url);
+}
+
+function initLangFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const l = params.get("lang");
+    if (l === "hi") lang = "hi";
+}
+
+initLangFromURL();
+render();
+
+</script>
+
+</body>
+</html>
